@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Random Page Refresher",
+  "version": "1.0",
+  "description": "Refreshes the page after a random interval within certain conditions.",
+  "permissions": ["tabs", "activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.google.com/"],
+      "js": ["background.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
